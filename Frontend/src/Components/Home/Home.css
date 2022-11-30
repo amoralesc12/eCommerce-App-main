@@ -1,0 +1,11 @@
+
+
+.Home {
+    height: 100%;
+    background-color: green;
+    background-blend-mode: color-dodge;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
