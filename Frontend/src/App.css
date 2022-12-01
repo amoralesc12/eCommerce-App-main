@@ -1,28 +1,125 @@
-
-
-
-.App-header {
-  
-  background: rgb(99,177,68);background: -moz-linear-gradient(90deg, rgba(99,177,68,0.4819466307923034) 0%, rgba(252,255,1,0.18367348136482653) 100%);background: -webkit-linear-gradient(90deg, rgba(99,177,68,0.4819466307923034) 0%, rgba(252,255,1,0.18367348136482653) 100%);background: linear-gradient(90deg, rgba(99,177,68,0.4819466307923034) 0%, rgba(252,255,1,0.18367348136482653) 100%);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#63b144",endColorstr="#fcff01",GradientType=1);
-  animation: gradient 15s ease infinite;
- 
+@font-face {
+  font-family: allright;
+  src: url(allright.ttf);
 }
 
+@font-face {
+  font-family: kiona;
+  src: url(Kiona-Regular.ttf);
+}
 
+.landingPic {
+  height: 100vh;
+  width: 100vw;
 
+  background-color: #2e2d2d;
+  overflow: auto;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(260px);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#63b144",endColorstr="#fcff01",GradientType=1);
+  animation: gradient 2s ease infinite;
 
-@media (min-height:500px){
-  .cardParent{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    column-gap: 1rem;
-
+  @media screen and (min-height: 500px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 
+.heroImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
 
-@keyframes gradient{
-  0%{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 120px;
+  margin-right: 120px;
+
+  width: 1270px;
+  height: 560px;
+
+  background-image: url("homepic.jpg");
+  background-position: relative;
+  max-width: 100%;
+  background-blend-mode: color-dodge;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  border-style: dashed;
+  border-width: thin;
+  border-color: green;
+  border-radius: 40px;
+  box-shadow: 0px 4px 15px rgba(92, 85, 85, 0.1);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  @media screen and (min-height: 500px) {
+  }
+}
+
+.heroImage > .allrightFont {
+  font-family: allright;
+  color: black;
+  filter: drop-shadow(0px 2px 6px #faea18);
+  font-size: 80pt;
+  padding-top: 80px;
+  padding-right: 28px;
+}
+
+.heroImage > .kionaFont,
+.kionaFont2 {
+  font-family: kiona;
+  color: black;
+  filter: drop-shadow(0px 2px 6px rgba(92, 85, 85, 0.1));
+  font-size: 16px;
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+.kionaFont2 {
+  margin-top: 0px;
+  padding-top: 0px;
+  font-weight: bold;
+}
+
+.kionaFontBtn {
+  margin-top: 8px;
+  font-family: kiona !important;
+  color: black !important;
+
+  padding-inline: 32px;
+  padding-block: 18px;
+  font-size: 16px;
+
+  font-family: kiona !important;
+  font-weight: lighter;
+  border-color: black !important ;
+
+  /* font-weight: bold !important;
+  padding-right: 10px;
+  background-color: yellow !important;
+  border-color: black !important; */
+}
+
+.kionaFontBtn:hover {
+  filter: drop-shadow(0px 2px 6px rgba(255, 255, 8, 0.649)) !important;
+  background-color: rgba(255, 255, 8, 0.649) !important ;
+  border-color: yellow !important ;
+}
+
+@media (min-height: 500px) {
+  .cardParent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    column-gap: 1rem;
+  }
+}
+
+@keyframes gradient {
+  0% {
     background-position: 0% 50%;
   }
 
@@ -30,7 +127,7 @@
     background-position: 100% 50%;
   }
 
-  100%{
+  100% {
     background-position: 0% 50%;
   }
 }

@@ -1,0 +1,65 @@
+@font-face {
+  font-family: kiona;
+  src: url("Kiona-Regular.ttf");
+}
+
+.title,
+.home,
+.about,
+.contact {
+  display:flex;
+  row-gap: 8px;
+  margin-top: 2rem;
+  font-family: kiona;
+  font-weight: lighter;
+  font-size: small;
+  color: yellow !important;
+}
+
+.title {
+   margin-left: 120px;
+ 
+}
+
+.home{
+
+  margin-left: -100px;
+}
+
+.contact{
+ 
+}
+
+.extend {
+  padding-left: 945px !important;
+}
+
+.kionaFontButton {
+
+
+  margin-top: 2rem;
+  margin-left: 20px;
+  font-family: kiona !important;
+  font-weight: lighter;
+  font-size: small;
+  color: yellow !important;
+  border-color:  yellow !important ;
+
+  position: relative;
+  padding: 1%;
+  
+  padding-inline: 32px;
+  padding-block: 18px;
+
+
+  font-size: 16px;
+  
+}
+.kionaFontButton:hover{
+  filter: drop-shadow(0px 2px 6px rgba(255, 255, 8, 0.649)) !important;
+  background-color:rgba(255, 255, 8, 0.649) !important ;
+}
+.home:hover , .about:hover , .contact:hover{
+filter: drop-shadow(0px 2px 6px rgba(255, 255, 8, 0.649)) !important;
+}
+
