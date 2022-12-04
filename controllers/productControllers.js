@@ -33,7 +33,7 @@ async function getProduct(req, res) {
 
 async function getSearch(req, res) {
   try {
-    const { name } = req.query.name;
+    const { name } = req.query;
     const errorMessages = [];
     if (!name) {
       errorMessages.push("Parameter 'name' is required");
