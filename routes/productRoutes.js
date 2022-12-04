@@ -5,8 +5,8 @@ const productControllers = require("../controllers/productControllers");
 
 //enlace router
 
-router.get("/", productControllers.getP);
-router.get("/getS", productControllers.getSearch);
+router.get("/", productControllers.getProduct);
+router.get("/getsearch", productControllers.getSearch);
 //get product/search
 
 module.exports = router;

@@ -1,11 +1,11 @@
 const knex = require("knex")({
   client: "mysql",
   connection: {
-    host: process.env.HOST,
-    port: 3306,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE,
+      host: process.env.database_host,
+      port: 3306,
+      user: process.env.database_user,
+      password: process.env.database_password,
+      database: process.env.database_name,
   },
 });
 
@@ -40,10 +40,15 @@ async function updateUser(id, user) {
     .where("users.id", "=", id)
     .update({
       name: user.name,
+    })
+    .update({
+      addresses:{
+
       street: user.street,
       city: user.city,
       state: user.state,
       zipcode: parseInt(user.zipcode),
+      }
     });
 
   return;

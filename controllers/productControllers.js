@@ -3,7 +3,7 @@ const productService = require("../services/products");
 const { isDecimal } = require("../utils/validator");
 const { isString } = require("../utils/validator");
 
-async function getP(req, res) {
+async function getProduct(req, res) {
   try {
     const { limit, offset } = req.query;
     const errorMessages = [];
@@ -19,8 +19,9 @@ async function getP(req, res) {
     if (errorMessages.length) {
       res.status(400).send(errorMessages);
     } else {
-      const products = await productService.getProduct(limit, offset);
-      if (products.length) res.send(products[0]);
+      const products = await productService.get_Product(limit, offset);
+      if (products.length) 
+      res.send(products[0]);
       else {
         res.status(404).send("product does not exist");
       }
@@ -43,7 +44,7 @@ async function getSearch(req, res) {
     if (errorMessages.length) {
       res.status(400).send(errorMessages);
     } else {
-      const product_s = await productService.getPS(name);
+      const product_s = await productService.getproduct_search(name);
       if (product_s.length) res.send(product_S[0]);
       else {
         res.status(404).send("name does not exist");
@@ -55,6 +56,6 @@ async function getSearch(req, res) {
 }
 
 module.exports = {
-  getP,
+  getProduct,
   getSearch,
 };
