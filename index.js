@@ -13,4 +13,5 @@ const usersRouter = require("./routes/userRoutes");
 //Definicion de routes
 app.use("/product", productsRouter);
 app.use("/user", usersRouter);
-app.listen(3000);
+app.use(cors());
+app.listen(3002);
