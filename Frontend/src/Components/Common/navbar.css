@@ -1,63 +1,141 @@
-@font-face {
-  font-family: kiona;
-  src: url("Kiona-Regular.ttf");
+
+.responsive{
+  
+  background-color: #2e2d2d;
+}
+
+*{
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .title,
 .home,
 .about,
-.contact {
+.contact, .kionaFontButton , .sm-auto {
   display:flex;
-  row-gap: 8px;
+  flex-direction: row;
   margin-top: 2rem;
-  font-family: kiona;
   font-weight: lighter;
-  font-size: small;
+  font-size: 16px !important ;
+  font-size: 2vw ;
   color: yellow !important;
+  gap:44px;
 }
 
-.title {
-   margin-left: 120px;
+
+@media screen and (min-width:500px) {
+  button.navbar-toggler, .title ,
+  .home,
+  .about,
+  .contact, .kionaFontButton   {
+    font-size:10px    !important; 
+    transition: 0.5s ease-in-out; 
+  } 
+  
+.title ,  .home,
+.about,
+.contact, .kionaFontButton{
+  margin-left: 30px !important;
+  transition: 0.5s ease-in-out; 
+}
+  .sm-auto{
+    margin-right:40px !important;
+  }
+
+ 
+
+}
+@media screen and (min-width:600px) {
+  
+  button.navbar-toggler, .title , .home,
+  .about,
+  .contact, .kionaFontButton{
+    font-size:12px    !important; 
+    transition: 0.5s ease-in-out; margin-left: 60px !important;
+  } 
+
+  .title , .home,
+  .about,
+  .contact, .kionaFontButton{
+    margin-left:60px !important;
+    transition: 0.5s ease-in-out; margin-left: 60px !important;
+  }
+  .sm-auto{
+    margin-right:50px !important;
+  }
+
+
+}
+
+@media screen and (min-width:1000px) {
+  .title , .home,
+  .about,
+  .contact, .kionaFontButton{
+    margin-left:85px !important;
+    transition: 0.5s ease-in-out; 
+  }
+}
+
+@media screen and (min-width:900px) {
+
+  button.navbar-toggler, .title{
+    font-size:14px    !important; 
+    transition: 0.5s ease-in-out; 
+
+  } 
+ 
+  .title ,.home,
+  .about,
+  .contact, .kionaFontButto{
+    margin-left:90px !important;
+    transition: 0.5s ease-in-out; 
+  }
  
 }
 
-.home{
 
-  margin-left: -100px;
-}
 
-.contact{
- 
-}
 
-.extend {
-  padding-left: 945px !important;
-}
+
+button.navbar-toggler{ 
+  background-color: yellow !important; 
+} 
+
+
+
+
+
+
+
 
 .kionaFontButton {
 
 
   margin-top: 2rem;
-  margin-left: 20px;
+  margin-left: 1vw;
   font-family: kiona !important;
   font-weight: lighter;
   font-size: small;
-  color: yellow !important;
+  background-color: rgb(68, 123, 5) !important ;
   border-color:  yellow !important ;
-
+  
+  border-width: thin !important;
   position: relative;
   padding: 1%;
   
   padding-inline: 32px;
   padding-block: 18px;
-
-
-  font-size: 16px;
   
+  color: yellow !important;
+
+  border-width: thin;
+
 }
+
 .kionaFontButton:hover{
-  filter: drop-shadow(0px 2px 6px rgba(255, 255, 8, 0.649)) !important;
-  background-color:rgba(255, 255, 8, 0.649) !important ;
+  filter: drop-shadow(0px 2px 6px  rgba(92,169,4)) !important;
+  border-color: yellow !important ;
 }
 .home:hover , .about:hover , .contact:hover{
 filter: drop-shadow(0px 2px 6px rgba(255, 255, 8, 0.649)) !important;

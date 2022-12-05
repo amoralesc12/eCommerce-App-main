@@ -1,11 +1,153 @@
 
+@font-face {
+  font-family: allright;
+  src: url(allright.ttf);
+}
 
-.Home {
-    height: 100%;
-    background-color: green;
-    background-blend-mode: color-dodge;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+@font-face {
+  font-family: kiona;
+  src: url(Kiona-Regular.ttf);
+}
 
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+@media screen and (max-width:600px) {
+  .kionaFont,
+.kionaFont2 , .kionaFontBtn   {
+    font-size:10px    !important; 
+    transition: 0.5s ease-in-out;
+  } 
+}
+
+
+@media screen and (min-width:600px) {
+  .kionaFont,
+.kionaFont2 , .kionaFontBtn{
+    font-size:12px    !important; 
+    transition: 0.5s ease-in-out;
+  } 
+}
+
+@media screen and (min-width:900px) {
+  .kionaFont,
+.kionaFont2 , .kionaFontBtn{
+    font-size:14px    !important; 
+    transition: 0.5s ease-in-out;
+  } 
+}
+
+
+.landingPic {
+  height: 100vh;
+  width: 100vw;
+
+  background-color: #2e2d2d;
+  overflow: auto;
+  background-repeat: repeat;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(260px);
+  overflow-x: hidden;
+}
+
+
+
+.heroImage {
+  display: block;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  overflow-x: hidden;
+
+
+
+  width: 85.52173913043478vw !important;
+  margin-left: 6.5vw !important;
+  background-image: url("homepic.jpg");
+  background-blend-mode: color-dodge;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-style: dashed;
+  border-width: thin;
+  border-color: green;
+  border-radius: 40px;
+  box-shadow: 0px 4px 15px rgba(92, 85, 85, 0.1);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  @media screen (max-height: 100%) {
+    width: auto;
+    height: auto;
+  }
+}
+
+.heroImage > .fontContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.fontContainer > .allrightFont {
+  font-family: allright;
+  color: black;
+  filter: drop-shadow(0px 2px 6px #faea18);
+  font-size: 80px ;
+  font-size: 9vw !important;
+  padding-top: 8vw;
+  padding-right: 28px;
+}
+
+.fontContainer > .kionaFont,
+.kionaFont2 {
+
+  color: black;
+  filter: drop-shadow(0px 2px 6px rgba(92, 85, 85, 0.1));
+  font-weight: lighter;
+  padding-right: 10px;
+
+}
+
+.kionaFontBtn.btn {
+ 
+  color: yellow !important;
+  background-color: rgba(92,169,4) !important ;
+
+  font-weight: lighter;
+  border-color: yellow !important ;
+  border-width: thin;
+  padding-left:  2.0833333333333335vw;
+    padding-right:  2.0833333333333335vw;
+
+
+}
+
+.kionaFontBtn:hover {
+  filter: drop-shadow(0px 2px 6px  rgba(92,169,4)) !important;
+  background-color:  rgba(92,169,4,0.69) !important ;
+  border-color: yellow !important ;
+}
+
+@media (min-height: 500px) {
+  .cardParent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    column-gap: 1rem;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }

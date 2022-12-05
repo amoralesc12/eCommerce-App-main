@@ -1,0 +1,82 @@
+@font-face {
+    font-family: kiona;
+    src: url(Kiona-Regular.ttf);
+  }
+  
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.register{
+    background-color: #2e2d2d;
+}
+
+.registerBg.container{
+        display: block;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        width:   40.083333333333336vw !important;
+        height:700px;
+          color:black;
+        border-style: dashed;
+        border-width: thin;
+        border-color: yellow;
+        border-radius: 16px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        background: white;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        margin-bottom: 5% !important;
+}
+
+.titleRegister.container{
+    display: block;
+    margin-left: 40vw  !important;
+    margin-top: 2%;
+    font-family: allright;
+    font-size: 5.208333333333333vw !important;
+    color:yellow;
+}
+
+.enterName, .enterEmailRegister{
+    margin-left: 5vw;
+    font-weight: bold;
+    font-family: kiona;
+   
+}
+
+.enterName{
+    margin-top:60px;
+}
+
+
+input.username.form-control{
+    margin-left: 5vw;
+    width:30vw;
+}
+
+input.username.form-control:focus{
+    width:32vw;
+    margin-left: 4vw;
+    transition: 0.5s ease-in-out;
+}
+
+
+button.submitButtonRegister.btn.btn-primary{
+    margin-top: -20px !important;
+    padding-left:  6.0833333333333335vw;
+    padding-right:  6.0833333333333335vw;
+    font-size: 1.0416666666666667vw;
+    margin-left: 11vw;
+    color: yellow;
+    background-color: rgba(92,169,4);
+}
+
+
+.goToLogin.alert.alert-light.show{
+    margin-top: -8px !important;
+    margin-left: 14vw;
+    font-family: kiona !important;
+    font-size: 12px !important;
+    font-weight: lighter !important;
+    color:aliceblue !important;
+}
