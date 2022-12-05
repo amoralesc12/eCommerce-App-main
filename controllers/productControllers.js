@@ -20,8 +20,7 @@ async function getProduct(req, res) {
       res.status(400).send(errorMessages);
     } else {
       const products = await productService.get_Product(limit, offset);
-      if (products.length) 
-      res.send(products[0]);
+      if (products.length) res.send(products);
       else {
         res.status(404).send("product does not exist");
       }
@@ -38,20 +37,18 @@ async function getSearch(req, res) {
     if (!name) {
       errorMessages.push("Parameter 'name' is required");
     }
-    if (!isString(name)) {
-      errorMessages.push("Parameter 'name' needs to be a string");
-    }
+
     if (errorMessages.length) {
       res.status(400).send(errorMessages);
     } else {
       const product_s = await productService.getproduct_search(name);
-      if (product_s.length) res.send(product_S[0]);
+      if (product_s.length) res.send(product_s);
       else {
         res.status(404).send("name does not exist");
       }
     }
   } catch (exception) {
-    res.status(500).send("internal server error");
+    res.status(500).send("internal sserver error");
   }
 }
 

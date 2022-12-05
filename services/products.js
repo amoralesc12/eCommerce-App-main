@@ -34,8 +34,8 @@ async function getproduct_search(name) {
         .innerJoin("brands", "products.brand_id", "=", "brands.id")
         .innerJoin("categories", "categories.id", "=", "products.category_id")
         .whereLike("products.name", "%" + name + "%")
-        .orwhereLike("brands.name", "%" + name + "%")
-        .orwhereLike("category.name", "%" + name + "%")
+        .orWhereLike("brands.name", "%" + name + "%")
+        .orWhereLike("categories.name", "%" + name + "%")
     )
   );
   return pSearch;

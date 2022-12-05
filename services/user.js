@@ -32,7 +32,7 @@ async function getUser() {
   return users;
 }
 
-async function updateUser(id, user) {
+async function updateUser(id) {
   await knex
     .select()
     .table("users")
