@@ -22,9 +22,11 @@
     "install": "^0.13.0",
     "jsonwebtoken": "^8.5.1",
     "knex": "^2.3.0",
+    "mongoose": "^6.8.0",
     "mysql": "^2.18.1"
   },
   "devDependencies": {
+    "mongodb-memory-server": "^8.10.2",
     "nodemon": "^2.0.20"
   }
 }

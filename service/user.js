@@ -15,7 +15,7 @@ async function register(user) {
     name: user.name,
     email: user.email,
     password: user.encryptedPassword,
-    salt: student.salt,
+    salt: user.salt,
   });
 }
 
@@ -57,9 +57,20 @@ async function updateUser(id) {
 
   return;
 }
+async function getUserByEmail(email) {
+  const user_email = JSON.parse(
+      JSON.stringify(
+          await knex.select()
+              .table('users')
+              .where('users.email',"=", email)
+      )
+  );
+  return user_email;
+}
 
 module.exports = {
   updateUser,
   getUser,
   register,
+  getUserByEmail,
 };

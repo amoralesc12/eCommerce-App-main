@@ -68,18 +68,34 @@ function MyLogIn(props) {
     <div className="landingPic">
       <Container className="title">Log In</Container>
       <Container className="background">
-        <Form className="LogIn">
+        <Form className="LogIn" onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label className="enterEmail">Email Address</Form.Label>
-            <Form.Control type="email" className="emailBtn" />
-
+            <Form.Control
+              type="email"
+              className="emailBtn"
+              placeholder="Enter email"
+              onChange={(e) => setField("email", e.target.value)}
+              isInvalid={!!errors.email}
+            />
+            <Form.Control.Feedback type="invalid">
+              {errors.email}
+            </Form.Control.Feedback>
             <Form.Text className="text-muted">
               We will never share your email with anyone else.
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label className="enterPassword">Password</Form.Label>
-            <Form.Control type="password" className="passwordBtn" />
+            <Form.Control
+              type="password"
+              className="passwordBtn"
+              onChange={(e) => setField("password", e.target.value)}
+              isInvalid={!!errors.password}
+            />
+            <Form.Control.Feedback type="invalid">
+              {errors.password}
+            </Form.Control.Feedback>
             <Form.Text className="text-muted">
               Must have at least one uppercase letter, number, special character
             </Form.Text>
@@ -97,5 +113,4 @@ function MyLogIn(props) {
     </div>
   );
 }
-
 export default MyLogIn;

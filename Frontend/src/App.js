@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import MyNavBar from "./Components/Common";
-import Home from "./Components/Home";
+import Home from "./Components/Home/Home.jsx"
 // import Cats from "./Components/Cats";
 import MyLogin from "./Components/LogIn";
 import myCard from "./Components/Card";

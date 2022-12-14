@@ -73,7 +73,7 @@ function Register(props) {
     <div className="landingPic">
       <Container className="titleRegister">Register</Container>
       <Container className="registerBg">
-        <Form>
+        <Form  className="Register" onSubmit={handleSubmit}>
           <Form.Label className="enterName">Name</Form.Label>
           <Form.Control aria-label="First name" className="username" />
           <Form.Text className="text-muted">
@@ -84,7 +84,13 @@ function Register(props) {
             <Form.Label className="enterEmailRegister">
               Email Address
             </Form.Label>
-            <Form.Control type="email" className="emailBtn" />
+            <Form.Control type="email" className="emailBtn"
+            placeholder="Enter email"
+            onChange={(e) => setField("email", e.target.value)}
+            isInvalid={!!errors.email} />
+            <Form.Control.Feedback type="invalid">
+              {errors.email}
+            </Form.Control.Feedback>
 
             <Form.Text className="text-muted">
               We will never share your email with anyone else.
@@ -92,14 +98,25 @@ function Register(props) {
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label className="enterPassword">Password</Form.Label>
-            <Form.Control type="password" className="passwordBtn" />
+            <Form.Control type="password" className="passwordBtn" 
+            onChange={(e) => setField("password", e.target.value)}
+            isInvalid={!!errors.password} />
+            <Form.Control.Feedback type="invalid">
+              {errors.password}
+            </Form.Control.Feedback>
             <Form.Text className="text-muted">
               Must have at least one uppercase letter, number, special character
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label className="enterPassword">Confirm Password</Form.Label>
-            <Form.Control type="password" className="passwordBtn" />
+            <Form.Control type="password" className="passwordBtn" 
+             onChange={(e) => setField("password", e.target.value)}
+             isInvalid={!!errors.password} 
+             />
+            <Form.Control.Feedback type="invalid">
+              {errors.password}
+            </Form.Control.Feedback>
             <Form.Text className="text-muted">
               Please enter your password again
             </Form.Text>

@@ -1,7 +1,17 @@
 const userService = require("../service/user");
 const { isDecimal } = require("../utils/validator");
+const { successResponse, badRequestResponse } = require("../utils/responseBuilder");
 
 const { IsEmail, IsPassword } = require("../utils/validator");
+const HTTPCodes = {
+  OK: 200,
+  CREATED: 201,
+  UPDATED: 204,
+  BAD_REQUEST: 400,
+  UNAUTHORIZED: 401,
+  NOT_FOUND: 404,
+  INTERNAL_SERVER_ERROR: 500
+};
 const crypto = require("crypto");
 
 const jwt = require("jsonwebtoken");
@@ -24,7 +34,7 @@ async function loginUser(req, res) {
     }
 
     // action
-    let dbUser = await getStudentByEmail(email);
+    let dbUser = await getUserByEmail(email);
     if (dbUser) {
       dbUser = dbUser[0];
       const userEncryptedDetails = encryptPassword(password, dbUser.salt);
@@ -36,6 +46,7 @@ async function loginUser(req, res) {
           },
           process.env.ACCESS_TOKEN_SECRET,
           {
+          
             expiresIn: "1h",
           }
         );
@@ -66,7 +77,7 @@ async function loginUser(req, res) {
 }
 
 async function registerUser(req, res) {
-  const { email, password, name, age } = req.body;
+  const { email, password, name } = req.body;
   const errorMessages = [];
   if (!email) {
     errorMessages.push("Parameter 'email' is required");
@@ -88,10 +99,6 @@ async function registerUser(req, res) {
     errorMessages.push("Invalid 'name' type");
   }
 
-  if (age && isNaN(age)) {
-    errorMessages.push("Parameter 'age' needs to be a numeric value");
-  }
-
   if (errorMessages.length) {
     res.status(HTTPCodes.BAD_REQUEST).send(badRequestResponse(errorMessages));
   } else {
@@ -103,8 +110,8 @@ async function registerUser(req, res) {
       encryptedPassword,
     };
 
-    const userId = register(user2);
-    res.send(successResponse(studentId));
+    const userId = userService.register(user2);
+    res.send(successResponse(userId));
   }
 }
 
