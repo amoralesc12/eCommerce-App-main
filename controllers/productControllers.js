@@ -1,4 +1,4 @@
-const productService = require("../services/products");
+const productService = require("../service/products");
 
 const { isDecimal } = require("../utils/validator");
 const { isString } = require("../utils/validator");

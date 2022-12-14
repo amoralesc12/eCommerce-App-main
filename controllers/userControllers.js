@@ -1,4 +1,4 @@
-const userService = require("../services/user");
+const userService = require("../service/user");
 const { isDecimal } = require("../utils/validator");
 
 const { IsEmail, IsPassword } = require("../utils/validator");

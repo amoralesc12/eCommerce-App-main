@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Alert from "react-bootstrap/Alert";
-import { register } from "../../services/users";
+import { register } from "../services/users";
 import { useHistory } from "react-router-dom";
 
 function Register(props) {
