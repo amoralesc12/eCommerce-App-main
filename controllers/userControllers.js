@@ -34,7 +34,7 @@ async function loginUser(req, res) {
     }
 
     // action
-    let dbUser = await getUserByEmail(email);
+    let dbUser = await userService.getUserByEmail(email);
     if (dbUser) {
       dbUser = dbUser[0];
       const userEncryptedDetails = encryptPassword(password, dbUser.salt);
@@ -135,15 +135,15 @@ function encryptPassword(
   };
 }
 async function getU(_, res) {
-  const students = await userService.getUser();
-  res.send(students);
+  const user = await userService.getUser();
+  res.send(user);
 }
 
 async function update(req, res) {
   //parametros7tr
   try {
     const { id } = req.query;
-    const { user, addresses } = req.body;
+    const  address  = req.body;
     const error_Message = [];
     if (!id) {
       error_Message.push("Parameter 'id' is required");
@@ -154,7 +154,7 @@ async function update(req, res) {
     if (error_Message.length) {
       res.status(400).send(errorMessages);
     } else {
-      await userService.updateUser(id, user);
+      await userService.updateUser(id, address);
       res.send();
     }
   } catch (expection) {

@@ -40,18 +40,17 @@ async function getUser() {
   return users;
 }
 
-async function updateUser(id) {
+async function updateUser(id,address) {
   await knex
-    .select()
-    .table("users")
-    .innerJoin("addresses", "users.id", "=", "addresses.user_id")
-    .where("users.id", "=", id)
+    .table("addresses")
+    .where("id", "=", id)
     .update({
+    
       addresses: {
-        street: user.street,
-        city: user.city,
-        state: user.state,
-        zipcode: parseInt(user.zipcode),
+        street: address.street,
+        city: address.city,
+        state: address.state,
+        zipcode: parseInt(address.zipcode),
       },
     });
 
